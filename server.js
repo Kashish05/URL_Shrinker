@@ -1,10 +1,11 @@
+require('dotenv').config();
 const express = require('express')
 const mongoose = require('mongoose')
 const ShortUrl = require('./models/shortUrl')
 const app = express()
 
 mongoose.set("strictQuery", false);
-mongoose.connect('mongodb+srv://kashish-purswani:Kashish0508@cluster0.etjj6dz.mongodb.net/shrinkyURL', {
+mongoose.connect(process.env.DBURL, {
     useNewUrlParser: true, useUnifiedTopology: true
 })
 
